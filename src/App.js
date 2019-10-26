@@ -5,6 +5,8 @@ import { BrowserRouter, NavLink, Route, Switch } from "react-router-dom";
 import Courses from "./containers/Courses/Courses";
 import Users from "./containers/Users/Users";
 
+import NotFound from "./components/NotFound/NotFound";
+
 import "./App.css";
 
 class App extends Component {
@@ -40,7 +42,7 @@ class App extends Component {
             <Switch>
               <Route path="/users" component={Users} />
               <Route path="/courses" component={Courses} />
-              <Route />
+              <Route component={NotFound} />
             </Switch>
           </div>
         </BrowserRouter>
