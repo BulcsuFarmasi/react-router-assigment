@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { BrowserRouter, NavLink, Route, Switch } from "react-router-dom";
 
 import Courses from "./containers/Courses/Courses";
-import Course from "./containers/Course/Course";
 import Users from "./containers/Users/Users";
 
 import "./App.css";
@@ -41,7 +40,6 @@ class App extends Component {
             <Switch>
               <Route path="/users" component={Users} />
               <Route path="/courses" component={Courses} />
-              <Route path="/course/:id" component={Course} />
               <Route />
             </Switch>
           </div>

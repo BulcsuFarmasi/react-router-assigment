@@ -6,10 +6,25 @@ class Course extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
-    const search = new URLSearchParams(this.props.location.search);
-    this.setState({ title: search.get("title") });
+    const title = this.getTitle();
+    this.setTitle(title);
   }
+
+  componentDidUpdate() {
+    const title = this.getTitle();
+    if (title !== this.state.title) {
+      this.setTitle(title);
+    }
+  }
+
+  getTitle = () => {
+    const search = new URLSearchParams(this.props.location.search);
+    return search.get("title");
+  };
+
+  setTitle = title => {
+    this.setState({ title });
+  };
 
   render() {
     return (

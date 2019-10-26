@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import { Route } from "react-router-dom";
+
+import Course from "../Course/Course";
+
 import "./Courses.css";
 
 class Courses extends Component {
@@ -15,7 +19,7 @@ class Courses extends Component {
     const search = new URLSearchParams();
     search.set("title", title);
     this.props.history.push({
-      pathname: "/course/" + id,
+      pathname: "/courses/" + id,
       search: search.toString()
     });
   };
@@ -37,6 +41,7 @@ class Courses extends Component {
             );
           })}
         </section>
+        <Route path={this.props.match.url + "/:id"} component={Course} />
       </div>
     );
   }
