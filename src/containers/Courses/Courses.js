@@ -12,7 +12,12 @@ class Courses extends Component {
   };
 
   navigateHandler = (id, title) => {
-    this.props.history.push(`/course/${id}/${encodeURI(title)}`);
+    const search = new URLSearchParams();
+    search.set("title", title);
+    this.props.history.push({
+      pathname: "/course/" + id,
+      search: search.toString()
+    });
   };
 
   render() {
